@@ -1,0 +1,144 @@
+/* Reset de márgenes y fuentes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Contenedor general */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos para la sección "Quiénes Somos" */
+.quienes-somos {
+    background-color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.quienes-somos h1 {
+    font-size: 36px;
+    color: #00366d;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.quienes-somos p {
+    font-size: 18px;
+    color: #515151;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Estilos para la misión y visión */
+.mision-vision {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.mision, .vision {
+    width: 45%;
+    background-color: #ecf0f1;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mision h2, .vision h2 {
+    font-size: 24px;
+    color: #00366d;
+    margin-bottom: 15px;
+}
+
+.mision p, .vision p {
+    font-size: 16px;
+    color: #515151;
+    line-height: 1.6;
+}
+
+/* Imagen de la empresa */
+.imagen-empresa img {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 40px;
+    border-radius: 8px;
+}
+
+/* Estilos para el equipo de trabajo */
+.equipo {
+    margin-top: 60px;
+}
+
+.equipo h2 {
+    font-size: 28px;
+    color: #00366d;
+    margin-bottom: 30px;
+}
+
+.miembros {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.miembro {
+    width: 30%;
+    text-align: center;
+}
+
+.miembro img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.miembro h3 {
+    font-size: 20px;
+    color: #00366d;
+    margin-bottom: 5px;
+}
+
+.miembro p {
+    font-size: 16px;
+    color: #515151;
+}
+
+/* Estilos para los testimonios */
+.testimonios {
+    margin-top: 60px;
+    background-color: #ecf0f1;
+    padding: 40px 0;
+    border-radius: 8px;
+}
+
+.testimonios h2 {
+    font-size: 28px;
+    color: #00366d;
+    margin-bottom: 30px;
+}
+
+.testimonio {
+    font-size: 16px;
+    color: #515151;
+    margin-bottom: 20px;
+}
+
+.testimonio p {
+    line-height: 1.6;
+}
+
+.testimonio strong {
+    font-weight: bold;
+    color: #2c3e50;
+}

@@ -1,0 +1,252 @@
+/* Reset global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos básicos */
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 0;
+    max-width: 100vw;
+    overflow-x: hidden;
+    padding-top: 60px; /* Espacio para la barra fija */
+}
+
+a.nav_link {
+    text-decoration: none;
+    color: inheit;
+}
+
+.nav_link:hover {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Navbar */
+nav {
+    position: fixed ; /* Fija la barra de navegación */
+    top: 0;
+    left: 0;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    background-color: #3498db;
+    padding: 10px;
+    z-index: 1000; /* Asegura que la barra se quede encima de otros elementos */
+    display: flex; /* Alinea los elementos de la barra de navegación */
+    justify-content: space-between; /* Asegura que haya espacio entre el logo y los enlaces */
+    align-items: center; /* Alinea los elementos verticalmente */
+}
+
+/* Logo */
+.logo {
+    height: 110px; /* Ajusta el tamaño del logo según sea necesario */
+    margin-left: 30px;
+}
+
+/* Lista de navegación */
+.nav_lis {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav_item {
+    position: relative;
+}
+
+.nav_link {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    width: 150px;
+    list-style: none;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+a.sub{
+    text-decoration: none
+}
+
+.nav_item:hover .submenu {
+    display: block;
+}
+
+.submenu li a {
+    color: white;
+    padding: 10px;
+}
+
+/* Carrusel */
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilo de sección "Apasionados por tus mascotas" */
+.mascota {
+    text-align: center;
+    padding: 20px;
+}
+
+.mascota h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.cuadrado {
+    width: 22%;
+    background-color: #3498db;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cuadrado:hover {
+    transform: scale(1.05);
+    background-color: #2980b9;
+}
+
+.cuadrado i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.cuadrado h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.cuadrado p {
+    font-size: 1em;
+}
+
+/* Estilo de footer */
+footer {
+    background-color: #2980b9;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-section h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.social-icon {
+    display: block;
+    margin-top: 5px;
+    color: white;
+}
+
+/* WhatsApp button */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #25d366;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer-bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #ddd;
+}
+
+/* Para dispositivos móviles (máximo 768px) */
+@media (max-width: 768px) {
+    .nav_lis {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav_item {
+        margin: 10px 0;
+    }
+
+    .mascota h1 {
+        font-size: 1.8em;
+    }
+
+    .contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cuadrado {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-bottom {
+        font-size: 0.9em;
+    }
+}
+
+/* Para dispositivos extra pequeños (menor de 480px) */
+@media (max-width: 480px) {
+    .nav_lis {
+        font-size: 0.9em;
+    }
+
+    .cuadrado {
+        width: 100%;
+    }
+
+    .footer-bottom {
+        font-size: 0.7em;
+    }
+
+    .whatsapp-button {
+        width: 45px;
+        height: 45px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+
+
+
