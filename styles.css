@@ -34,7 +34,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%; /* Asegura que ocupe todo el ancho */
-    background-color: #3498db;
+    background-color: #040dac;
     padding: 10px;
     z-index: 1000; /* Asegura que la barra se quede encima de otros elementos */
     display: flex; /* Alinea los elementos de la barra de navegación */
@@ -44,7 +44,7 @@ nav {
 
 /* Logo */
 .logo {
-    height: 110px; /* Ajusta el tamaño del logo según sea necesario */
+    height: 140px; /* Ajusta el tamaño del logo según sea necesario */
     margin-left: 30px;
 }
 
@@ -52,7 +52,7 @@ nav {
 .nav_lis {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
 .nav_item {
