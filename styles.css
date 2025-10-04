@@ -19,7 +19,7 @@ body {
 
 a.nav_link {
     text-decoration: none;
-    color: inheit;
+    color: inherit;
 }
 
 .nav_link:hover {
@@ -92,8 +92,10 @@ a.sub{
 
 /* Carrusel */
 .carousel-item img {
-    width: 100%;
+    width: 100vw;
+    max-width: 100%;
     height: auto;
+    object-fit: cover;
 }
 
 /* Estilo de sección "Apasionados por tus mascotas" */
@@ -227,12 +229,31 @@ footer {
 
 /* Para dispositivos extra pequeños (menor de 480px) */
 @media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5px;
+    }
+    .logo {
+        height: 60px;
+        margin-left: 10px;
+    }
     .nav_lis {
-        font-size: 0.9em;
+        font-size: 1em;
+        gap: 5px;
+    }
+    .nav_item {
+        margin: 5px 0;
+    }
+
+    .contenedor {
+        gap: 10px;
     }
 
     .cuadrado {
         width: 100%;
+        padding: 10px;
+        font-size: 0.95em;
     }
 
     .footer-bottom {
@@ -240,10 +261,22 @@ footer {
     }
 
     .whatsapp-button {
-        width: 45px;
-        height: 45px;
-        bottom: 10px;
-        right: 10px;
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+        padding: 5px;
+    }
+
+    .footer-content {
+        gap: 10px;
+        padding: 0 5px;
+    }
+    .footer-section h2 {
+        font-size: 1em;
+    }
+    .footer-section p, .footer-section a {
+        font-size: 0.9em;
     }
 }
 
