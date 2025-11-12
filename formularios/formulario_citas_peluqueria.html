@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Cita de Peluquería - Canes de Lujo</title>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body class="body">
+    <nav>
+        <img class="logo" src="../img/Adobe Express - file.png" alt="Canes de Lujo Logo">
+        <ul class="nav_lis">
+          <li class="nav_item"><a href="../index.html"  class="nav_link">Inicio</a></li>
+          <li class="nav_item"><a href="../quienes somos.html"  class="nav_link">Quienes somos</a></li>
+          <li class="nav_item"><a href="../index.html#servicios"  class="nav_link">Servicios</a>
+            <ul class="submenu">
+              <li><a class="sub" href="../servicios/peluqueria.html">Peluquería</a></li>
+              <li><a class="sub" href="../servicios/consultas.html">Consultas</a></li>
+              <li><a class="sub" href="../servicios/alimentos.html">Alimentos</a></li>
+              <li><a class="sub" href="../servicios/medicamentos.html">Medicamentos</a></li>
+              <li><a class="sub" href="../servicios/accesorios.html">Accesorios</a></li>
+            </ul>
+          </li>
+          <li class="nav_item"><a href="./formulario_contacto.html"  class="nav_link">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <div class="form-container-peluqueria">
+        <h1 class="title">Reservar Cita de Peluquería</h1>
+        <p style="text-align: center; margin-bottom: 20px; font-weight: bold; color: var(--dark-blue);">
+        Horarios de Atención: Lunes a Sábado, de 9:00 AM a 4:00 PM.</p>
+        <p style="text-align: center; margin-bottom: 30px;">Por favor, completa los siguientes datos para agendar tu servicio.</p>
+        
+        <form action="#" method="post"> 
+            
+            <label for="nombre_dueno">Nombre del Dueño:</label>
+            <input type="text" id="nombre_dueno" name="nombre_dueno" placeholder="Tu Nombre Completo" required>
+            
+            <div class="form-row">
+                <div>
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3214037392" required>
+                </div>
+                <div>
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                </div>
+            </div>
+
+            <hr style="margin: 25px 0;">
+
+            <label for="nombre_mascota">Nombre de la Mascota:</label>
+            <input type="text" id="nombre_mascota" name="nombre_mascota" placeholder="El nombre de tu perro o gato" required>
+
+            <label for="tipo_mascota">Tipo y Tamaño:</label>
+            <select id="tipo_mascota" name="tipo_mascota" required>
+                <option value="">Selecciona el tamaño y especie</option>
+                <option value="perro_pequeno">Perro Pequeño (hasta 10kg)</option>
+                <option value="perro_mediano">Perro Mediano (10kg - 25kg)</option>
+                <option value="perro_grande">Perro Grande (más de 25kg)</option>
+                <option value="gato">Gato</option>
+            </select>
+            
+            <label for="servicio">Servicio de Peluquería Requerido:</label>
+            <select id="servicio" name="servicio" required>
+                <option value="">Selecciona el servicio</option>
+                <option value="bano_basico">Baño Básico</option>
+                <option value="bano_corte">Baño y Corte de Raza</option>
+                <option="deslanado">Deslanado / Tratamiento de Mantenimiento</option>
+                <option value="solo_corte">Solo Corte (Ya bañado)</option>
+            </select>
+
+            <div class="form-row">
+                <div>
+                    <label for="fecha">Fecha Preferida:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+                <div>
+                    <label for="hora">Hora Preferida:</label>
+                    <input type="time" id="hora" name="hora" min="09:00" max="17:00" required>
+                </div>
+            </div>
+
+            <p style="font-size: 0.9em; margin-bottom: 20px; color: #7f8c8d;">* La cita será confirmada por nuestro equipo vía telefónica o WhatsApp.</p>
+
+            <button type="submit">Solicitar Cita</button>
+        </form>
+    </div>
+
+    <a href="https://wa.me/573214037392" target="_blank" title="Contáctanos por WhatsApp"><img src="../img/whatsapp.png" alt="Logo de WhatsApp" class="whatsapp-button"></a>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2>Contacto</h2>
+                <p>Email: maria16051@gmail.com</p>
+                <p>Teléfono: 3214037392</p>
+            </div>
+            <div class="footer-section">
+                <h2>Redes Sociales</h2>
+                <a href="#" class="social-icon">Facebook</a>
+                <a href="https://wa.me/573214037392" target="_blank" class="social-icon">whatsApp</a>
+                <a href="#" class="social-icon">Instagram</a>
+            </div>
+            <div class="footer-section">
+                <h2>Dirección</h2>
+                <p>Tranversal 94L#88a34</p>
+                <p>Bogota D.C, COLOMBIA</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Canes de Lujo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,147 @@
+/* --- Estilos peluqueria --- */
+.service-header {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 80px 20px 50px;
+    text-align: center;
+}
+.service-header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+.service-content {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.service-detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 30px;
+}
+.service-detail:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.service-text {
+    flex: 1;
+    text-align: left;
+}
+.service-text h2 {
+    color: var(--dark-blue);
+    font-size: 2em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--accent-yellow);
+    padding-bottom: 5px;
+}
+.service-image {
+    flex: 1;
+    max-width: 500px;
+}
+.service-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+.cta-section {
+    background-color: #ecf0f1;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .service-detail, 
+    .service-detail:nth-child(even) {
+        flex-direction: column;
+    }
+    .service-image {
+        margin-top: 20px;
+    }
+    .service-header h1 {
+        font-size: 2.5em;
+    }
+}
+
+
+
+/* --- Estilos de Catálogo (Tarjetas de Producto) --- */
+
+.catalog-grid {
+    display: grid;
+    /* 3 columnas en escritorio, adaptable */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.product-card {
+    background-color: var(--text-light); /* Fondo blanco */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.product-image-container {
+    height: 250px;
+    overflow: hidden;
+}
+
+.product-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin deformarse */
+}
+
+.product-info {
+    padding: 20px;
+    flex-grow: 1; /* Permite que el contenido se estire si es necesario */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-info h3 {
+    font-size: 1.5em;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 1em;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.product-price {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--accent-yellow);
+    margin-bottom: 20px;
+}
+
+.product-card a {
+    display: block;
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: auto; /* Empuja el botón hacia abajo */
+}
+
+.product-card a:hover {
+    background-color: var(--dark-blue);
+}

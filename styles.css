@@ -5,16 +5,25 @@
     box-sizing: border-box;
 }
 
+/* Variables CSS para una gestión de color más fácil */
+:root {
+    --primary-blue: #3498db;
+    --dark-blue: #2980b9;
+    --accent-yellow: #f0c14b; /* Color de énfasis */
+    --text-dark: #333;
+    --text-light: white;
+}
+
 /* Estilos básicos */
 body {
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Nueva tipografía */
     background-color: #f4f4f4;
-    color: #333;
+    color: var(--text-dark);
     line-height: 1.6;
     padding: 0;
     max-width: 100vw;
     overflow-x: hidden;
-    padding-top: 60px; /* Espacio para la barra fija */
+    padding-top: 130px; /* Ajuste el espacio para la barra fija */
 }
 
 a.nav_link {
@@ -23,36 +32,40 @@ a.nav_link {
 }
 
 .nav_link:hover {
-    background-color: #333;
+    background-color: var(--dark-blue);
     padding: 10px;
     border-radius: 10px;
 }
 
 /* Navbar */
 nav {
-    position: fixed ; /* Fija la barra de navegación */
+    position: fixed ;
     top: 0;
     left: 0;
-    width: 100%; /* Asegura que ocupe todo el ancho */
-    background-color: #3498db;
-    padding: 10px;
-    z-index: 1000; /* Asegura que la barra se quede encima de otros elementos */
-    display: flex; /* Alinea los elementos de la barra de navegación */
-    justify-content: space-between; /* Asegura que haya espacio entre el logo y los enlaces */
-    align-items: center; /* Alinea los elementos verticalmente */
+    width: 100%;
+    background-color: var(--primary-blue);
+    padding: 10px 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    height: 120px; /* Asegura un alto fijo para la navbar */
 }
 
 /* Logo */
 .logo {
-    height: 110px; /* Ajusta el tamaño del logo según sea necesario */
+    height: 110px;
     margin-left: 30px;
+    object-fit: contain;
 }
 
 /* Lista de navegación */
 .nav_lis {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 25px; /* Más espacio */
+    margin-right: 30px;
 }
 
 .nav_item {
@@ -60,226 +73,424 @@ nav {
 }
 
 .nav_link {
-    color: white;
+    color: var(--text-light);
     text-transform: uppercase;
     font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
 }
 
+/* Submenú (Manteniendo el estilo mejorado) */
 .submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #333;
-    width: 150px;
-    list-style: none;
-    padding: 20px;
-    border-radius: 10px;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: var(--text-light);
+  min-width: 180px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  padding: 8px 0;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
 }
 
-a.sub{
-    text-decoration: none
+.nav_item:hover .submenu,
+.nav_item:focus-within .submenu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.nav_item:hover .submenu {
-    display: block;
+.submenu li {
+  list-style: none;
 }
 
-.submenu li a {
-    color: white;
-    padding: 10px;
+.submenu .sub {
+  display: block;
+  padding: 10px 24px;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+  border-radius: 4px;
+}
+
+.submenu .sub:hover,
+.submenu .sub:focus {
+  background: var(--accent-yellow);
+  color: var(--text-dark);
 }
 
 /* Carrusel */
 .carousel-item img {
     width: 100vw;
     max-width: 100%;
-    height: auto;
+    height: 600px; /* Altura fija para evitar saltos */
     object-fit: cover;
 }
 
-/* Estilo de sección "Apasionados por tus mascotas" */
+/* Estilo de sección "Apasionados por tus mascotas" (index.html) */
 .mascota {
     text-align: center;
-    padding: 20px;
+    padding: 50px 20px;
 }
 
 .mascota h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--dark-blue);
+    font-weight: 700;
 }
 
 .contenedor {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
+    justify-content: center;
+    gap: 30px;
 }
 
 .cuadrado {
-    width: 22%;
-    background-color: #3498db;
-    border-radius: 10px;
-    padding: 20px;
-    color: white;
+    width: 280px; /* Ancho fijo para consistencia */
+    background-color: var(--primary-blue);
+    border-radius: 15px;
+    padding: 30px;
+    color: var(--text-light);
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 250px;
 }
 
 .cuadrado:hover {
-    transform: scale(1.05);
-    background-color: #2980b9;
+    transform: translateY(-10px); /* Efecto de elevación */
+    background-color: var(--dark-blue);
 }
 
 .cuadrado i {
-    font-size: 40px;
-    margin-bottom: 10px;
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: var(--accent-yellow); /* Color de énfasis para íconos */
 }
 
 .cuadrado h2 {
-    font-size: 1.5em;
+    font-size: 1.6em;
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .cuadrado p {
     font-size: 1em;
 }
 
+/* Sección de Mapa/Ubicación (index.html) */
+.mapa-section {
+    padding: 50px 20px;
+    background-color: var(--text-light);
+}
+
+.mapa-section h2 {
+    color: var(--dark-blue);
+    font-size: 2em;
+    font-weight: 700;
+}
+
+
+/* Estilos integrados de styles1.css (quienes somos.html) */
+.container-qs { /* Contenedor para la página Quiénes Somos */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.quienes-somos {
+    background-color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.quienes-somos h1 {
+    font-size: 36px;
+    color: var(--dark-blue); /* Color consistente */
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.quienes-somos p {
+    font-size: 18px;
+    color: var(--text-dark); 
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Estilos para la misión y visión */
+.mision-vision {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    flex-wrap: wrap; 
+}
+
+.mision, .vision {
+    width: 45%;
+    min-width: 300px;
+    background-color: #ecf0f1;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.mision h2, .vision h2 {
+    font-size: 24px;
+    color: var(--primary-blue); /* Color consistente */
+    margin-bottom: 15px;
+}
+
+/* Imagen de la empresa */
+.imagen-empresa {
+    margin: 40px auto;
+}
+.imagen-empresa img {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Estilos para el equipo de trabajo */
+.equipo {
+    margin-top: 60px;
+}
+
+.equipo h2 {
+    font-size: 28px;
+    color: var(--dark-blue); /* Color consistente */
+    margin-bottom: 30px;
+}
+
+.miembros {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.miembro {
+    width: 250px; /* Ancho fijo para consistencia */
+    text-align: center;
+}
+
+.miembro img {
+    width: 100%;
+    height: 250px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover; 
+    border: 4px solid var(--accent-yellow);
+}
+
+.miembro h3 {
+    font-size: 20px;
+    color: var(--dark-blue); /* Color consistente */
+    margin-bottom: 5px;
+}
+
+/* Estilos para los testimonios */
+.testimonios {
+    margin-top: 60px;
+    background-color: #ecf0f1;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 60px auto 0 auto;
+    max-width: 900px;
+}
+
+.testimonios h2 {
+    font-size: 28px;
+    color: var(--dark-blue); /* Color consistente */
+    margin-bottom: 30px;
+}
+
+.testimonio {
+    font-size: 16px;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    border-left: 5px solid var(--accent-yellow);
+    padding-left: 20px;
+    text-align: left;
+}
+
+
 /* Estilo de footer */
 footer {
-    background-color: #2980b9;
-    color: white;
-    padding: 20px 0;
+    background-color: var(--dark-blue);
+    color: var(--text-light);
+    padding: 40px 0 20px 0;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .footer-section h2 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--accent-yellow);
+    padding-bottom: 5px;
 }
 
 .social-icon {
     display: block;
-    margin-top: 5px;
-    color: white;
+    margin-top: 8px;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: var(--accent-yellow);
 }
 
 /* WhatsApp button */
 .whatsapp-button {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background-color: #25d366;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    transition: transform 0.3s;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
 }
 
 /* Footer-bottom */
 .footer-bottom {
     text-align: center;
-    margin-top: 20px;
-    font-size: 0.8em;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9em;
     color: #ddd;
 }
 
+/* --- Media Queries (Responsividad) --- */
+
+/* Para tablets y dispositivos medianos (máximo 1024px) */
+@media (max-width: 1024px) {
+    .nav_lis {
+        gap: 15px;
+    }
+
+    .carousel-item img {
+        height: 450px;
+    }
+}
+
+
 /* Para dispositivos móviles (máximo 768px) */
 @media (max-width: 768px) {
+    body {
+        padding-top: 100px; /* Ajuste para navbar más pequeña */
+    }
+
+    nav {
+        height: 90px;
+    }
+
+    .logo {
+        height: 80px;
+        margin-left: 10px;
+    }
+
     .nav_lis {
-        flex-direction: column;
-        align-items: center;
+        display: none; /* Se recomienda usar un botón de hamburguesa con JS para móviles */
     }
 
-    .nav_item {
-        margin: 10px 0;
-    }
-
-    .mascota h1 {
-        font-size: 1.8em;
+    .mascota h1, .quienes-somos h1 {
+        font-size: 2em;
     }
 
     .contenedor {
-        flex-direction: column;
-        align-items: center;
+        gap: 20px;
     }
 
     .cuadrado {
-        width: 90%;
-        margin: 10px 0;
+        width: 45%; /* Dos columnas en tablets pequeñas/móviles grandes */
+        min-height: 200px;
+    }
+    
+    .mision-vision {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
 
-    footer .footer-content {
+    .mision, .vision {
+        width: 90%;
+        min-width: unset;
+    }
+
+    .miembros {
         flex-direction: column;
         align-items: center;
     }
 
-    .footer-bottom {
-        font-size: 0.9em;
+    .miembro {
+        width: 90%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 }
 
 /* Para dispositivos extra pequeños (menor de 480px) */
 @media (max-width: 480px) {
+    body {
+        padding-top: 70px;
+    }
+    
     nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 5px;
-    }
-    .logo {
         height: 60px;
-        margin-left: 10px;
+        padding: 5px 0;
     }
-    .nav_lis {
-        font-size: 1em;
-        gap: 5px;
-    }
-    .nav_item {
-        margin: 5px 0;
+    
+    .logo {
+        height: 50px;
     }
 
-    .contenedor {
-        gap: 10px;
+    .carousel-item img {
+        height: 300px;
     }
 
     .cuadrado {
-        width: 100%;
-        padding: 10px;
-        font-size: 0.95em;
-    }
-
-    .footer-bottom {
-        font-size: 0.7em;
+        width: 90%; /* Una sola columna en móviles pequeños */
     }
 
     .whatsapp-button {
-        width: 40px;
-        height: 40px;
-        bottom: 15px;
-        right: 15px;
-        padding: 5px;
-    }
-
-    .footer-content {
-        gap: 10px;
-        padding: 0 5px;
-    }
-    .footer-section h2 {
-        font-size: 1em;
-    }
-    .footer-section p, .footer-section a {
-        font-size: 0.9em;
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
     }
 }
-
-
-
-
